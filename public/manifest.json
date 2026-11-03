@@ -1,0 +1,16 @@
+{
+  "short_name": "SHREYA.exe",
+  "name": "SHREYA.exe — Enter My Universe",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0b0c0b",
+  "background_color": "#0b0c0b"
+}

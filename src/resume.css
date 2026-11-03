@@ -1,0 +1,303 @@
+.resume-experience {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 18% 68%, rgba(200, 250, 84, 0.055), transparent 34rem),
+    radial-gradient(ellipse at 86% 28%, rgba(81, 228, 242, 0.055), transparent 30rem);
+}
+
+.resume-experience::before,
+.resume-experience::after {
+  position: absolute;
+  z-index: -1;
+  width: min(60vw, 680px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(200, 250, 84, 0.07);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.resume-experience::before {
+  top: 17%;
+  right: -24%;
+  box-shadow: 0 0 90px rgba(81, 228, 242, 0.04), inset 0 0 70px rgba(200, 250, 84, 0.025);
+}
+
+.resume-experience::after {
+  bottom: -34%;
+  left: -32%;
+  width: min(48vw, 520px);
+  border-color: rgba(171, 139, 255, 0.08);
+}
+
+.resume-heading,
+.resume-showcase-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.resume-heading h2 {
+  font-size: clamp(56px, 9vw, 112px);
+  letter-spacing: -0.095em;
+}
+
+.resume-heading h2 span {
+  color: var(--lime);
+  text-shadow: 0 0 45px rgba(200, 250, 84, 0.18);
+}
+
+.resume-intro {
+  max-width: 46ch;
+  margin: 20px 0 0;
+  color: #a4a99e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.resume-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.86fr);
+  align-items: center;
+  gap: clamp(42px, 8vw, 110px);
+  margin-top: clamp(38px, 6vw, 74px);
+}
+
+.resume-preview-stage {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 480px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(81, 228, 242, 0.16);
+  background:
+    radial-gradient(ellipse at 50% 49%, rgba(200, 250, 84, 0.085), transparent 34%),
+    linear-gradient(145deg, rgba(19, 30, 35, 0.62), rgba(7, 9, 14, 0.86));
+  perspective: 1100px;
+}
+
+.resume-preview-stage::before {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(235, 239, 220, 0.055);
+  content: "";
+  pointer-events: none;
+}
+
+.resume-stage-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(81, 228, 242, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(81, 228, 242, 0.05) 1px, transparent 1px);
+  background-position: center;
+  background-size: 38px 38px;
+  mask-image: radial-gradient(ellipse at center, #000 14%, transparent 76%);
+}
+
+.resume-stage-orbit {
+  position: absolute;
+  width: 82%;
+  height: 45%;
+  border: 1px solid rgba(200, 250, 84, 0.25);
+  border-radius: 50%;
+  box-shadow: 0 0 28px rgba(200, 250, 84, 0.045);
+  pointer-events: none;
+  transform: rotate(-24deg);
+  animation: resume-orbit-float 12s ease-in-out infinite alternate;
+}
+
+.resume-stage-orbit-one::after,
+.resume-stage-orbit-two::after {
+  position: absolute;
+  top: 13%;
+  left: 17%;
+  width: 6px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 16px 3px rgba(200, 250, 84, 0.54);
+  content: "";
+}
+
+.resume-stage-orbit-two {
+  width: 68%;
+  height: 75%;
+  border-color: rgba(81, 228, 242, 0.24);
+  transform: rotate(38deg);
+  animation-delay: -5s;
+}
+
+.resume-stage-orbit-two::after {
+  top: auto;
+  right: 12%;
+  bottom: 14%;
+  left: auto;
+  background: var(--cyan);
+  box-shadow: 0 0 16px 3px rgba(81, 228, 242, 0.5);
+}
+
+.resume-pdf-preview {
+  position: relative;
+  z-index: 1;
+  width: min(76%, 430px);
+  min-height: 420px;
+  height: 420px;
+  padding: 0;
+  border: 1px solid rgba(200, 250, 84, 0.5);
+  background: #101310;
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.58),
+    0 0 44px rgba(200, 250, 84, 0.1);
+  transform: rotateY(-7deg) rotateZ(-2deg);
+  transition: transform 450ms cubic-bezier(0.2, 0.7, 0.1, 1), box-shadow 450ms ease;
+  animation: resume-document-float 7s ease-in-out infinite;
+}
+
+.resume-pdf-preview:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+
+.resume-showcase:hover .resume-pdf-preview {
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.62),
+    0 0 56px rgba(200, 250, 84, 0.16);
+  transform: rotateY(0) rotateZ(0) translateY(-5px);
+}
+
+.resume-stage-coordinate {
+  position: absolute;
+  z-index: 2;
+  right: 22px;
+  bottom: 20px;
+  color: #85928d;
+  font: 7px var(--mono);
+  letter-spacing: 0.11em;
+}
+
+.resume-showcase-copy {
+  max-width: 480px;
+}
+
+.resume-showcase-copy > .eyebrow span {
+  color: var(--lime);
+}
+
+.resume-showcase-copy h3 {
+  margin: 0;
+  color: var(--paper);
+  font-size: clamp(25px, 3.2vw, 40px);
+  font-weight: 530;
+  letter-spacing: -0.06em;
+  line-height: 1.08;
+}
+
+.resume-showcase-copy > p:not(.eyebrow) {
+  margin: 19px 0;
+  color: #a6ada5;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.resume-file-label.is-available {
+  color: var(--lime);
+}
+
+.resume-experience .resume-actions {
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.resume-experience .resume-actions .button {
+  min-height: 49px;
+  padding-inline: 16px;
+}
+
+.resume-status {
+  display: block;
+  min-height: 1.5em;
+  margin-top: 12px;
+  color: var(--cyan);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@keyframes resume-document-float {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -12px; }
+}
+
+@keyframes resume-orbit-float {
+  from { transform: rotate(-24deg) scale(0.98); }
+  to { transform: rotate(-20deg) scale(1.02); }
+}
+
+@media (max-width: 900px) {
+  .resume-showcase {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 0.9fr);
+    gap: 34px;
+  }
+
+  .resume-preview-stage {
+    min-height: 410px;
+  }
+
+  .resume-pdf-preview {
+    width: min(80%, 390px);
+    min-height: 360px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .resume-heading h2 {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+
+  .resume-showcase {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 34px;
+  }
+
+  .resume-preview-stage {
+    min-height: 400px;
+  }
+
+  .resume-pdf-preview {
+    width: 84%;
+    min-height: 350px;
+    height: 350px;
+    transform: rotateY(-3deg) rotateZ(-1deg);
+  }
+
+  .resume-stage-coordinate {
+    right: 14px;
+    bottom: 13px;
+    font-size: 6px;
+  }
+
+  .resume-showcase-copy h3 {
+    font-size: 27px;
+  }
+
+  .resume-experience .resume-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .resume-experience .resume-actions .button {
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-pdf-preview,
+  .resume-stage-orbit {
+    transition: none;
+    animation: none;
+  }
+}
