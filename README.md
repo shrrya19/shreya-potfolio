@@ -47,3 +47,4 @@ Only `title` and `file` are needed. Leave any unprovided issuer, date, category,
 Personal content and contact links are in `src/data/personal.js`; technologies are in `src/data/skills.js`; education milestones are in `src/data/journey.js`; project titles and any verified descriptions, technology names, screenshots (`/images/...`) and links are in `src/data/projects.js`. Publish only details that have been verified. The current project visuals are abstract scenes, not screenshots, and the project detail views do not imply unprovided functionality or deployment.
 
 The active sections live in `src/components/portfolio/`. The older starter-template components and assets remain in the project but are not used by the current app.
+# shreya-potfolio
